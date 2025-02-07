@@ -1,59 +1,123 @@
-import { Noto_Sans_SC } from "next/font/google"
-
-const notoSansSC = Noto_Sans_SC({ subsets: ["latin"] })
-
-export default function SupportCenter() {
-  return (
-    <div
-      className={`min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 ${notoSansSC.className}`}
-    >
-      <div className="max-w-3xl mx-auto">
-        <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-          <div className="bg-indigo-600 py-6">
-            <h1 className="text-3xl font-bold text-center text-white">衣搭Eda 支持中心</h1>
-          </div>
-
-          <div className="p-6 sm:p-10">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">常见问题</h2>
-
-            {[
-              {
-                question: "如何开始使用衣搭Eda？",
-                answer:
-                  "下载安装后，按照引导完成个人信息设置即可开始使用。我们会收集基本的个人特征信息，以便为您提供更准确的穿搭建议。",
-              },
-              {
-                question: "如何获取个性化穿搭建议？",
-                answer:
-                  "在主界面选择见面对象和场合，AI 将为您生成合适的穿搭建议。建议会考虑您的个人特征和场合需求，确保搭配合适得体。",
-              },
-              {
-                question: "数据安全问题",
-                answer: "我们严格遵守隐私政策，所有个人信息都经过加密存储，仅用于提供穿搭建议服务。",
-              },
-            ].map((item, index) => (
-              <div key={index} className="mb-8">
-                <h3 className="text-xl font-medium text-indigo-700 mb-2">
-                  {index + 1}. {item.question}
-                </h3>
-                <p className="text-gray-600">{item.answer}</p>
-              </div>
-            ))}
-
-            <div className="bg-gray-50 rounded-lg p-6 mt-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">联系我们</h2>
-              <p className="text-gray-600">邮箱：support@edaoutfit.com</p>
-              <p className="text-gray-600">工作时间：周一至周五 9:00-18:00</p>
-              <p className="text-gray-600">一般在24小时内回复</p>
-            </div>
-          </div>
-
-          <div className="bg-gray-100 py-4">
-            <p className="text-center text-gray-500 text-sm">© 2024 衣搭Eda. All rights reserved.</p>
-          </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>衣搭Eda - 支持中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #EBF4FF, #E0E7FF);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            margin: 2rem;
+        }
+        .header {
+            background-color: #4F46E5;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .content {
+            padding: 2rem;
+        }
+        h2 {
+            color: #1F2937;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .question {
+            margin-bottom: 2rem;
+        }
+        h3 {
+            color: #4F46E5;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        p {
+            color: #4B5563;
+            margin: 0;
+        }
+        .contact-info {
+            background-color: #F3F4F6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        .footer {
+            background-color: #F3F4F6;
+            text-align: center;
+            padding: 1rem;
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
+        @media (max-width: 640px) {
+            .container {
+                margin: 1rem;
+            }
+            .header, .content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>衣搭Eda 支持中心</h1>
         </div>
-      </div>
-    </div>
-  )
-}
+        
+        <div class="content">
+            <h2>常见问题</h2>
+            
+            <div class="question">
+                <h3>1. 如何开始使用衣搭Eda？</h3>
+                <p>下载安装后，按照引导完成个人信息设置即可开始使用。我们会收集基本的个人特征信息，以便为您提供更准确的穿搭建议。</p>
+            </div>
 
+            <div class="question">
+                <h3>2. 如何获取个性化穿搭建议？</h3>
+                <p>在主界面选择见面对象和场合，AI 将为您生成合适的穿搭建议。建议会考虑您的个人特征和场合需求，确保搭配合适得体。</p>
+            </div>
+
+            <div class="question">
+                <h3>3. 数据安全问题</h3>
+                <p>我们严格遵守隐私政策，所有个人信息都经过加密存储，仅用于提供穿搭建议服务。</p>
+            </div>
+
+            <div class="contact-info">
+                <h2>联系我们</h2>
+                <p>邮箱：support@edaoutfit.com</p>
+                <p>工作时间：周一至周五 9:00-18:00</p>
+                <p>一般在24小时内回复</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 衣搭Eda. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
